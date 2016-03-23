@@ -1,0 +1,22 @@
+{
+  "name": "fis-parser-crox",
+  "version": "0.0.0",
+  "description": "crox for fis",
+  "main": "index.js",
+  "dependencies": {
+      "crox.mod": "^1.4.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudongyan/fis-parser-crox.git"
+  },
+  "author": "sudongyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudongyan/fis-parser-crox/issues"
+  },
+  "homepage": "https://github.com/sudongyan/fis-parser-crox"
+}
