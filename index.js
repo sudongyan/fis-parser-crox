@@ -1,10 +1,10 @@
 /**
- *  * fis.baidu.com
- *   */
+ *   fis.baidu.com
+ */
 
-var crox = require('crox');
-var helper = require('crox/bin/helper');
-var precompiler = require('crox/lib/precompile-node').precompile;
+var crox = require('crox.mod');
+var helper = require('crox.mod/bin/helper');
+var precompiler = require('crox.mod/lib/precompile-node').precompile;
 var jsBeautify = require('js-beautify').js_beautify;
 
   function doJsBeautify(str) {
