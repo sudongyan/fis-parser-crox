@@ -1,10 +1,11 @@
 {
   "name": "fis-parser-crox",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "crox for fis",
   "main": "index.js",
   "dependencies": {
-      "crox.mod": "^1.4.4"
+      "crox.mod": "^1.4.4",
+      "js-beautify": "~1.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
