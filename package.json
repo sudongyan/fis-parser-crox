@@ -1,6 +1,6 @@
 {
   "name": "fis-parser-crox",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "crox for fis",
   "main": "index.js",
   "dependencies": {
