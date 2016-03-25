@@ -44,16 +44,18 @@ compilers.vm2 = compilers.vm;
 function getOptions() {
     return {
         htmlEncode: outHtmlEncode,
-        modulePrefix:''
+        modulePrefix:outModulePrefix || ''
     }
 }
 
 var outHtmlEncode = '';
+var outModulePrefix = '';
 
 module.exports = function (content, file, opts) {
     var opts = opts || {};
     var target = (opts.out || 'commonjs').trim();
     var htmlEncode = outHtmlEncode = opts.htmlEncode || '';
+    var modulePrefix = outModulePrefix = opts.modulePrefix || '';
     var flatten = !!opts.flatten;
 
     var filepath = file.realpath;
