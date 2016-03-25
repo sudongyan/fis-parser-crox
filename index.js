@@ -52,11 +52,11 @@ var outHtmlEncode = '';
 
 module.exports = function (content, file, opts) {
     var opts = opts || {};
-    var target = (opts.target || 'commonjs').trim();
+    var target = (opts.out || 'commonjs').trim();
     var htmlEncode = outHtmlEncode = opts.htmlEncode || '';
     var flatten = !!opts.flatten;
-    var filepath = file.realpath;
 
+    var filepath = file.realpath;
     var compiler = compilers[target];
     var isJs = target != 'vm' && target != 'vm2' && target != 'php';
     var compiled;
