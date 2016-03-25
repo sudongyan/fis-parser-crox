@@ -44,45 +44,44 @@ compilers.vm2 = compilers.vm;
 function getOptions() {
     return {
         htmlEncode: outHtmlEncode,
-        modulePrefix: outModulePrefix
+        modulePrefix:''
     }
 }
 
+var outHtmlEncode = '';
 
 module.exports = function (content, file, opts) {
     var opts = opts || {};
-    var target = opts.target || 'commonjs',
-        target = target.trim();
-        var htmlEncode = opts.htmlEncode || '';
-        var flatten = !!opts.flatten;
-        var filepath = file.realpath;
-        var outHtmlEncode = opts.htmlEncode;
+    var target = (opts.target || 'commonjs').trim();
+    var htmlEncode = outHtmlEncode = opts.htmlEncode || '';
+    var flatten = !!opts.flatten;
+    var filepath = file.realpath;
 
-        var compiler = compilers[target];
-        var isJs = target != 'vm' && target != 'vm2' && target != 'php';
-        var compiled;
+    var compiler = compilers[target];
+    var isJs = target != 'vm' && target != 'vm2' && target != 'php';
+    var compiled;
 
-        if (isJs && target != 'js') {
-            if (opts.flatten) {
-                fs.writeFileSync(filepath, precompiler(file.realpath));
-                compiled = compiler(filepath);
-                fs.writeFileSync(filepath, content);
-            } else {
-                compiled = compiler(filepath);
-            }
+    if (isJs && target != 'js') {
+        if (opts.flatten) {
+            fs.writeFileSync(filepath, precompiler(file.realpath));
+            compiled = compiler(filepath);
+            fs.writeFileSync(filepath, content);
         } else {
-            if (opts.flatten) {
-                content = precompiler(filepath);
-            }
-            compiled = compiler(content);
+            compiled = compiler(filepath);
         }
-        if (isJs) {
-            compiled = doJsBeautify(compiled);
+    } else {
+        if (opts.flatten) {
+            content = precompiler(filepath);
         }
-        if (target == 'vm2') {
-            compiled = compiled.replace(/#\{end\}/g, '#end');
-        }
+        compiled = compiler(content);
+    }
+    if (isJs) {
+        compiled = doJsBeautify(compiled);
+    }
+    if (target == 'vm2') {
+        compiled = compiled.replace(/#\{end\}/g, '#end');
+    }
 
 
-        return compiled;
+    return compiled;
 };
