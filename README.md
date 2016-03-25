@@ -3,16 +3,16 @@ fis-parser-crox
 
 Crox 的 fis插件
 
-### Crox 文档
+### 文档
 
-- http://thx.github.io/crox/
+- Crox http://thx.github.io/crox/
+- FIS3 http://fis.baidu.com/fis3/docs/beginning/intro.html
 
 **安装**
 
 ```
 npm -g install fis3
 npm -g install fis-parser-crox
-
 ```
 
 **配置使用**
@@ -30,5 +30,4 @@ fis.match('*.tmpl',{
         flatten:false // 是否把include都打平,默认为false（读取真实文件内容替换）
     })
 });
-
 ```
