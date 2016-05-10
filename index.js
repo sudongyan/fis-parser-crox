@@ -65,15 +65,16 @@ module.exports = function (content, file, opts) {
 
     if (isJs && target != 'js') {
         if (opts.flatten) {
-            fs.writeFileSync(filepath, precompiler(file.realpath));
-            compiled = compiler(filepath);
-            fs.writeFileSync(filepath, content);
+           // fs.writeFileSync(filepath, precompiler(file.realpath));
+
+            compiled = compiler(precompiler(filepath,content));
+          //  fs.writeFileSync(filepath, content);
         } else {
-            compiled = compiler(filepath);
+            compiled = compiler(content);
         }
     } else {
         if (opts.flatten) {
-            content = precompiler(filepath);
+            content = precompiler(filepath,content);
         }
         compiled = compiler(content);
     }
