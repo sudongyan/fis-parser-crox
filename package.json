@@ -1,10 +1,10 @@
 {
   "name": "fis-parser-crox",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "crox for fis",
   "main": "index.js",
   "dependencies": {
-      "crox.mod": "^1.4.8",
+      "crox.mod": "^1.4.6",
       "js-beautify": "~1.4.0"
   },
   "scripts": {
